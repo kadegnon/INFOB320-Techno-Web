@@ -48,3 +48,15 @@ def yello_6(name="", surname=""):
 @app.route('/yello_world')
 def yello_world():
     return render_template('yello.html')
+
+
+@app.route('/my_form', methods=['GET', 'POST'])
+def process_request():
+    if(request.method == "POST"):
+        _username = request.form['username']
+        if _username:
+            return render_template('process_response.html', response=_username)
+        else:
+            return "WHERE is the fu**ing name ?!", 400
+    else:
+        return render_template('process_form.html')
