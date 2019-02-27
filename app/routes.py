@@ -4,4 +4,14 @@ from flask import render_template, redirect
 
 @app.route("/")
 def yello():
-    return "Yello WoOord !"
+    return """
+        <!DOCTYPE html> 
+        <html> 
+            <head>
+                <title>YOLO</title>
+            </head>
+            <body>
+                <h1>Yello WoOord !</h1>
+            </body> 
+        </html>
+    """
