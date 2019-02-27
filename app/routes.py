@@ -17,6 +17,21 @@ def yello():
     """
 
 
-@app.route("/yello_world/<username>")
-def yello_world_2(username="World"):
+@app.route("/yello_world_2/<username>")
+def yello_2(username="World"):
     return "Yo {}".format(username)
+
+
+@app.route("/yello_world_3/<string(length=8):username>")
+def yello_3(username="World"):
+    return "Yo {}".format(username)
+
+
+@app.route("/yello_world_4/<string(minlength=4, maxlength=8):username>")
+def yello_4(username="World"):
+    return "Yo {}".format(username)
+
+
+@app.route("/yello_world_5/<int:userid>")
+def yello_id(userid=123):
+    return "Yo your ID is #{:d}".format(userid)
