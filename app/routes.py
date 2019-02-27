@@ -15,3 +15,8 @@ def yello():
             </body> 
         </html>
     """
+
+
+@app.route("/yello_world/<username>")
+def yello_world_2(username="World"):
+    return "Yo {}".format(username)
