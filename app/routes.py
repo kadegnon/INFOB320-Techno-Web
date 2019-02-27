@@ -43,3 +43,8 @@ def yello_6(name="", surname=""):
     name = request.args.get("name")
     surname = request.args.get("surname")
     return "The quick brown fox ({})  jumps over the lazy dog ({})  --> {}".format(name, surname, type(name).__name__)
+
+
+@app.route('/yello_world')
+def yello_world():
+    return render_template('yello.html')
