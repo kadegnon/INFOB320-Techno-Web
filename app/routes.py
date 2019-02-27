@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, redirect
+from flask import url_for, request
 
 
 @app.route("/")
@@ -35,3 +36,10 @@ def yello_4(username="World"):
 @app.route("/yello_world_5/<int:userid>")
 def yello_id(userid=123):
     return "Yo your ID is #{:d}".format(userid)
+
+
+@app.route("/yello_world_6")
+def yello_6(name="", surname=""):
+    name = request.args.get("name")
+    surname = request.args.get("surname")
+    return "The quick brown fox ({})  jumps over the lazy dog ({})  --> {}".format(name, surname, type(name).__name__)
