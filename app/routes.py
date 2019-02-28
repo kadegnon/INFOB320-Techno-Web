@@ -8,7 +8,7 @@ tasks = []
 
 @app.route('/todo')
 def render_todo():
-    return render_template('todo.html')
+    return render_template('todo.html', todos=tasks)
 
 
 @app.route('/todo', methods=['POST'])
