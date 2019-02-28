@@ -12,7 +12,10 @@
     <h1>Todo List :</h1>
     <ul>
       {% for todo in todos %}
-      <li>{{ todo }}</li>
+      <li>
+        <span>{{ todo }} </span>
+        <a href={{"?delete=%d"%loop.index}}>X</a>
+      </li>
       {% endfor %}
     </ul>
     <form action="" method="post">

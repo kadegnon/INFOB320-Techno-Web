@@ -8,6 +8,9 @@ tasks = []
 
 @app.route('/todo')
 def render_todo():
+    if(len(tasks) > 0 and 'delete' in request.args):
+        id = int(request.args.get('delete'))
+        tasks.pop(id - 1)
     return render_template('todo.html', todos=tasks)
 
 
